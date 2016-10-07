@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BqO-2b-ZSa">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ddC-d0-R4u">
+            <objects>
+                <viewController id="BqO-2b-ZSa" customClass="ViewController" customModule="GameOfLife" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sr0-VL-8zK"/>
+                        <viewControllerLayoutGuide type="bottom" id="MqE-yg-bfb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PoN-NZ-Rvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oOJ-qc-Cgr">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eC0-pT-wbc">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cvCell" id="Efq-8y-b3p" customClass="CollectionViewCell" customModule="GameOfLife" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coA-U9-ZDk">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="coA-U9-ZDk" firstAttribute="height" secondItem="Efq-8y-b3p" secondAttribute="height" constant="-1" id="3y0-Ez-ibf"/>
+                                            <constraint firstItem="coA-U9-ZDk" firstAttribute="width" secondItem="Efq-8y-b3p" secondAttribute="width" constant="-1" id="m5R-KN-9gf"/>
+                                            <constraint firstItem="coA-U9-ZDk" firstAttribute="centerX" secondItem="Efq-8y-b3p" secondAttribute="centerX" id="q3S-gd-oPe"/>
+                                            <constraint firstItem="coA-U9-ZDk" firstAttribute="centerY" secondItem="Efq-8y-b3p" secondAttribute="centerY" id="t2V-mB-Z1u"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="indicator" destination="coA-U9-ZDk" id="ISr-0W-xsW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BqO-2b-ZSa" id="ETn-tf-zC5"/>
+                                    <outlet property="delegate" destination="BqO-2b-ZSa" id="aoI-dp-ubx"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oOJ-qc-Cgr" firstAttribute="width" secondItem="PoN-NZ-Rvy" secondAttribute="width" id="KkV-zC-rfN"/>
+                            <constraint firstItem="oOJ-qc-Cgr" firstAttribute="centerY" secondItem="PoN-NZ-Rvy" secondAttribute="centerY" id="L3m-fy-VfT"/>
+                            <constraint firstItem="oOJ-qc-Cgr" firstAttribute="centerX" secondItem="PoN-NZ-Rvy" secondAttribute="centerX" id="RwP-hj-vJg"/>
+                            <constraint firstItem="oOJ-qc-Cgr" firstAttribute="height" secondItem="PoN-NZ-Rvy" secondAttribute="height" id="i2l-kO-LHE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="oOJ-qc-Cgr" id="HPx-4P-gHA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seP-dK-Uyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="84"/>
+        </scene>
+    </scenes>
+</document>
