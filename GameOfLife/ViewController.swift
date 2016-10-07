@@ -50,7 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        grid.toggleCellAtIndex(row: indexPath.row, section: indexPath.section)
+        grid.markProgression(row: indexPath.row, section: indexPath.section)
         self.collectionView?.reloadData()
     }
     
