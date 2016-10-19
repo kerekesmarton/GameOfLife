@@ -21,7 +21,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         collectionView?.frame = UIScreen.main.bounds
         let screenWidth = collectionView?.frame.size.width
@@ -41,9 +40,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cvCell : CollectionViewCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cvCell", for: indexPath) as! CollectionViewCell
         let gameCell = grid.cellAtIndex(row: indexPath.row, section: indexPath.section)
         cvCell.indicator.backgroundColor = gameCell.isAlive() ? UIColor.red : UIColor.blue
+        cvCell.count.text = String(grid.countForIndex(indexPath))
         
         return cvCell
     }
@@ -63,4 +64,5 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var indicator: UIView!
+    @IBOutlet var count: UILabel!
 }

@@ -37,6 +37,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coA-U9-ZDk">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-WA-Ff5">
+                                                    <frame key="frameInset" minX="4" minY="14" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -46,6 +53,7 @@
                                             <constraint firstItem="coA-U9-ZDk" firstAttribute="centerY" secondItem="Efq-8y-b3p" secondAttribute="centerY" id="t2V-mB-Z1u"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="count" destination="cs6-WA-Ff5" id="FsW-MP-VeY"/>
                                             <outlet property="indicator" destination="coA-U9-ZDk" id="ISr-0W-xsW"/>
                                         </connections>
                                     </collectionViewCell>

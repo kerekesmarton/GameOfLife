@@ -28,9 +28,11 @@ class ModelTests: XCTestCase {
         
         XCTAssertFalse(cell.isAlive())
         
-        XCTAssertTrue(cell.bringToLife())
+        cell.bringToLife()
+        XCTAssertTrue(cell.isAlive())
         
-        XCTAssertFalse(cell.kill())
+        cell.kill()
+        XCTAssertFalse(cell.isAlive())
         
     }
     
@@ -40,7 +42,7 @@ class ModelTests: XCTestCase {
         
         var cell = grid.cellAtIndex(row: 0, section: 0)
         
-        _ = cell.bringToLife()
+        cell.bringToLife()
         grid.updateCellAtIndex(row: 0, section: 0, cell)
         
         // fetch cell again, should be alive.
